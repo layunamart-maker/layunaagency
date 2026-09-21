@@ -1,6 +1,6 @@
 import { Reveal } from '@/components/ui/Reveal'
-import { SectionHeading } from '@/components/ui/SectionHeading'
 import { ArrowRight, CheckCircle } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 interface PlatformServiceProps {
@@ -11,6 +11,7 @@ interface PlatformServiceProps {
   services: string[]
   cta?: { label: string; href: string }
   accentColor: string
+  logo: string
   dark?: boolean
 }
 
@@ -22,6 +23,7 @@ function PlatformServiceSection({
   services,
   cta,
   accentColor,
+  logo,
   dark = false,
 }: PlatformServiceProps) {
   return (
@@ -30,13 +32,47 @@ function PlatformServiceSection({
       className={`section-padding ${dark ? 'bg-midnight' : 'bg-light-bg'}`}
     >
       <div className="container-layuna">
-        <SectionHeading
-          eyebrow={eyebrow}
-          title={title}
-          description={description}
-          light={!dark}
-        />
+        {/* Header with LOGO */}
+        <Reveal>
+          <div className="flex flex-col items-center text-center">
+            <div
+              className={`mb-6 flex h-20 w-20 items-center justify-center rounded-2xl p-4 ${
+                dark ? 'bg-white/[0.04]' : 'bg-white'
+              }`}
+              style={{
+                border: dark
+                  ? '1px solid rgba(255,255,255,0.08)'
+                  : '1px solid #E5E9F2',
+              }}
+            >
+              <Image
+                src={logo}
+                alt={`${eyebrow} logo`}
+                width={64}
+                height={64}
+                className="h-full w-full object-contain"
+              />
+            </div>
 
+            <span className="eyebrow text-electric-blue mb-4">{eyebrow}</span>
+            <h2
+              className={`text-h2 max-w-3xl text-balance ${
+                dark ? 'text-white' : 'text-text-primary'
+              }`}
+            >
+              {title}
+            </h2>
+            <p
+              className={`text-body-lg mt-5 max-w-2xl text-pretty ${
+                dark ? 'text-white/55' : 'text-text-secondary'
+              }`}
+            >
+              {description}
+            </p>
+          </div>
+        </Reveal>
+
+        {/* Services Grid */}
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {services.map((service, i) => (
             <Reveal key={service} delay={i * 50}>
@@ -87,6 +123,7 @@ export function PlatformServices() {
         title="Amazon E-Commerce Management"
         description="Comprehensive Amazon solutions from account setup through to full-scale management."
         accentColor="#FF9900"
+        logo="/amazon.png"
         services={[
           'Amazon Seller Account Setup',
           'Amazon Business Setup',
@@ -116,6 +153,7 @@ export function PlatformServices() {
         title="eBay Store Management"
         description="Professional eBay store setup, optimization and management services."
         accentColor="#E53238"
+        logo="/ebay.png"
         services={[
           'Account Setup',
           'Store Setup',
@@ -139,6 +177,7 @@ export function PlatformServices() {
         title="Walmart Marketplace Management"
         description="Launch and grow your presence on Walmart Marketplace with professional support."
         accentColor="#0071CE"
+        logo="/walmart.png"
         services={[
           'Seller Setup',
           'Marketplace Onboarding',
@@ -161,6 +200,7 @@ export function PlatformServices() {
         title="Etsy Shop Management"
         description="Build and optimize a successful Etsy presence with expert shop management."
         accentColor="#F1641E"
+        logo="/etsy.png"
         services={[
           'Etsy Shop Setup',
           'Product Research',
@@ -181,6 +221,7 @@ export function PlatformServices() {
         title="Build Your Shopify Store"
         description="Custom Shopify development and management for direct-to-consumer brands."
         accentColor="#96BF48"
+        logo="/shopify.png"
         services={[
           'Shopify Store Setup',
           'Shopify Design',
@@ -204,6 +245,7 @@ export function PlatformServices() {
         title="Turn Social Traffic Into E-Commerce Sales"
         description="Leverage TikTok's growing commerce ecosystem for your brand."
         accentColor="#00F2EA"
+        logo="/tiktok.png"
         services={[
           'TikTok Shop Setup',
           'Seller Account Setup',
