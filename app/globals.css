@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --midnight: #070a12;
+    --deep-navy: #0d1324;
+    --navy-surface: #121a2e;
+    --electric-blue: #4f8cff;
+    --bright-blue: #75a7ff;
+    --cyan: #22d3ee;
+    --soft-violet: #8b7cff;
+    --light-bg: #f7f9fc;
+    --white: #ffffff;
+    --text-primary: #0b1020;
+    --text-secondary: #5e6678;
+    --border-light: #e5e9f2;
+    --soft-blue-surface: #eef4ff;
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --error: #ef4444;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-inter), system-ui, sans-serif;
+    background-color: var(--midnight);
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-space-grotesk), var(--font-inter), sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background-color: rgba(79, 140, 255, 0.3);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--electric-blue);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-layuna {
+    @apply mx-auto w-full max-w-[1280px] px-6;
+  }
+
+  .section-padding {
+    @apply py-24 md:py-32 lg:py-40;
+  }
+
+  .section-padding-sm {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .text-hero {
+    @apply text-[44px] leading-[0.98] tracking-[-0.04em] md:text-[56px] lg:text-[72px];
+  }
+
+  .text-h2 {
+    @apply text-[36px] leading-[1.05] tracking-[-0.02em] md:text-[44px] lg:text-[52px];
+  }
+
+  .text-h3 {
+    @apply text-[24px] leading-[1.15] md:text-[28px];
+  }
+
+  .text-body-lg {
+    @apply text-[18px] leading-[1.6] md:text-[20px];
+  }
+
+  .text-label {
+    @apply text-[12px] font-semibold uppercase tracking-[0.08em];
+  }
+
+  .eyebrow {
+    @apply text-label text-electric-blue;
+  }
+
+  .card-dark {
+    @apply rounded-2xl border border-white/[0.08] bg-navy-surface/60 backdrop-blur-sm transition-all duration-300;
+  }
+
+  .card-dark:hover {
+    @apply -translate-y-1.5 border-electric-blue/30;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.35), 0 0 40px rgba(79, 140, 255, 0.08);
+  }
+
+  .card-light {
+    @apply rounded-2xl border border-border-light bg-white shadow-soft transition-all duration-300;
+  }
+
+  .card-light:hover {
+    @apply -translate-y-1.5 border-electric-blue/20 shadow-elevated;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-[10px] bg-electric-blue px-7 py-3.5 text-[15px] font-semibold text-white transition-all duration-250 hover:bg-bright-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-blue focus-visible:ring-offset-2 focus-visible:ring-offset-midnight active:scale-[0.98];
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 0 30px rgba(79, 140, 255, 0.35);
+  }
+
+  .btn-primary .arrow {
+    @apply transition-transform duration-250;
+  }
+
+  .btn-primary:hover .arrow {
+    @apply translate-x-1;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-[10px] border border-white/15 bg-white/[0.04] px-7 py-3.5 text-[15px] font-semibold text-white backdrop-blur-sm transition-all duration-250 hover:border-white/30 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 active:scale-[0.98];
+  }
+
+  .btn-secondary .arrow {
+    @apply transition-transform duration-250;
+  }
+
+  .btn-secondary:hover .arrow {
+    @apply translate-x-1;
+  }
+
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-[10px] border border-border-light bg-white px-7 py-3.5 text-[15px] font-semibold text-text-primary transition-all duration-250 hover:border-electric-blue/30 hover:shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-blue active:scale-[0.98];
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.06] px-3.5 py-1.5 text-[12px] font-medium text-white/80 backdrop-blur-sm;
+  }
+
+  .badge-blue {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-electric-blue/30 bg-electric-blue/10 px-3.5 py-1.5 text-[12px] font-semibold text-electric-blue;
+  }
+
+  .section-dark {
+    @apply bg-midnight text-white;
+  }
+
+  .section-deep {
+    @apply bg-deep-navy text-white;
+  }
+
+  .section-light {
+    @apply bg-light-bg text-text-primary;
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.04); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float 7s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
