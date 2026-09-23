@@ -6,7 +6,7 @@ import Link from 'next/link'
 const setupCategories = [
   {
     icon: Building2,
-    title: 'USA Business Formation',
+    title: 'Business Formation',
     services: [
       'LLC Creation (USA)',
       'LTD Company Formation',
@@ -22,7 +22,7 @@ const setupCategories = [
   },
   {
     icon: CreditCard,
-    title: 'Payment Solutions (USA)',
+    title: 'Payment Solutions ',
     services: [
       'PayPal Business Setup',
       'Payoneer Business Account',
@@ -36,7 +36,7 @@ const setupCategories = [
   },
   {
     icon: Landmark,
-    title: 'Physical US Bank Account',
+    title: 'Physical USA Bank Account',
     services: [
       'Physical Bank Account Opening Support',
       'Business Banking Application',
@@ -71,7 +71,7 @@ export function BusinessSetupUSA() {
         <SectionHeading
           eyebrow="Entity Setup & Payment"
           title="Entity Setup & Payment"
-          description="Complete USA business formation services including LLC and LTD creation, PayPal, Payoneer, physical bank accounts and full operational setup for international entrepreneurs."
+          description="Complete business formation services including LLC and LTD creation, PayPal, Payoneer, physical bank accounts and full operational setup for international entrepreneurs."
         />
 
         <div className="mt-14 grid gap-5 md:grid-cols-2">
@@ -100,7 +100,7 @@ export function BusinessSetupUSA() {
         <Reveal delay={400}>
           <div className="mt-10 flex justify-center">
             <Link href="#contact" className="btn-primary">
-              Start My USA Business Setup
+              Start My Business Setup
               <ArrowRight className="arrow h-4 w-4" />
             </Link>
           </div>

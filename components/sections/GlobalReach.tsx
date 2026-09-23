@@ -16,12 +16,12 @@ const offices = [
   {
     city: 'Sialkot',
     region: 'Punjab, Pakistan',
-    note: 'Head Office — Ali Center, Sialkot',
+    note: 'Operations Office ',
   },
   {
     city: 'Lahore',
     region: 'Punjab, Pakistan',
-    note: 'Operations Office',
+    note: 'Head Office — Johar town ',
   },
   {
     city: 'Islamabad',
