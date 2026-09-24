@@ -5,6 +5,7 @@ import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { ScrollProgress } from '@/components/ui/ScrollProgress'
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
+import { CustomCursor } from '@/components/ui/CustomCursor'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -21,7 +22,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'Layuna Agency | E-Commerce Services, Marketplace Management & Growth',
   description:
-    'Layuna Agency provides e-commerce setup, Amazon, eBay, Walmart, Etsy, Shopify and TikTok Shop management, product sourcing, digital marketing, graphic design, social media marketing, web development, branding and business solutions.',
+    'Layuna Agency provides e-commerce setup, Amazon, eBay, Walmart, Etsy, Shopify and TikTok Shop management, product sourcing, marketing, branding and business solutions.',
   keywords: [
     'e-commerce agency',
     'e-commerce services',
@@ -36,13 +37,6 @@ export const metadata: Metadata = {
     'product research',
     'product sourcing',
     'e-commerce marketing',
-    'digital marketing',
-    'SEO services',
-    'graphic designing',
-    'social media marketing',
-    'web development',
-    'UI UX design',
-    '3D web design',
     'e-commerce business management',
   ],
   authors: [{ name: 'Layuna Agency' }],
@@ -78,6 +72,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="bg-midnight text-white antialiased">
+        <CustomCursor />
         <ScrollProgress />
         <Navbar />
         <main>{children}</main>
